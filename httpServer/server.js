@@ -6,12 +6,12 @@ const server = http.createServer((request, response) => {
 
     // GET Request
     response.writeHead(200, {"Content-type": "text/html"})
-    response.end("<h1>Welcome to server Programing</h1>")
+    // response.end("<h1>Welcome to server Programing</h1>")
 
     // POST Request
     if (request.method === "POST") {
         let body = " "
-
+  
         request.on("data", (data) =>{ 
             body += data.toString()
          response.end(body);
@@ -19,7 +19,18 @@ const server = http.createServer((request, response) => {
         });
  
     }
+
+  
+    if(request.method === "DELETE"){
+        request.on("data", (data) =>{ 
+            body = data.toString()
+
+         response.end(body);
+         console.log(body)
+        });
+    }
     
+
 });
 
 
