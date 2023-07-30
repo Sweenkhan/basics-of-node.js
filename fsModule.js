@@ -7,8 +7,7 @@ fs.writeFile("text.txt", "This is my First js write file /n", (err) => {
 
 
 
-fs.readFile("text.txt", (err, data) => {
-
+fs.readFile("text.txt", (err, data) => { 
     if(err) console.log(err)
 
     else{
